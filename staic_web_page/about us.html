@@ -4,22 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+    <style>
+        *{
+            padding: 0;margin: 0;box-sizing: border-box;
+        }
+        body{
+            /* background-color:darkgrey; */
+        }
+        .top-header{
+            background: #f7f7f7;
+        }
+        .nav{
+            background-color: blue;
+            margin-top: 2px;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid; */
+        
+        }
+        .manu{
+            padding-right: 300px;
+        }
+        ul{
+            display: flex;
+        }
+      li{
+        display: flex;
+        /* background: black; */
+       
+       
+      } 
+      a{
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+        text-decoration: none;
+        /* display: flex-end; */
+        padding-right: 60px;
+        padding-top: 30px;
+        font-size: larger;
+      }
+      .heading{
+        position: absolute;
+        right: 10%;
+        left: 20%;
+        top: 20%;
+        z-index: 2;
+      }
+        
+    </style>
+
 </head>
 <body>
-    <nav>
+    <div class="top-header">
+     
+    <h4 id="date"> </h4>
+    </div>
+    <div class="nav">
         <div>
-            <img src="./logo.png" alt="">
-            <a href="./home.html"> home</a>
-            <a href="./about us.html"> about us</a>
-            <a href="./courses.html"> courses</a>
-            <a href="./clints.html"> clints</a>
-            <a href="./contact us.html"> contact us</a>
-            
-            
+                <img src="./logo.png" alt="">
         </div>
-        <div>
+            <div class="manu">
+                <ul>
+                    <li> <a href="#home"> Home</a></li>
+                    <li><a href="#about us"> About Us</a></li>
+                    <li> <a href="#courses"> Courses</a></li>
+                    <li><a href="./clints.html"> clints</a></li>
+                    <li><a href="./contact us.html"> Contact Us</a></li>
+                </ul>
+            </div>    
+    </div>
+        <div id="about us">
             <img src="./about.jpg" alt="">
+           <div class="heading">
+            <h4 >Lets jump </h4>
+           </div>
             <h4> Who We Are? </h4>
             <p> INNOVATIVE SOLUTIONS, an Organization engaged in manufacturing, providing an unique solution of air purification systems based on Ionisation Technology to combat Stale, recycled, recirculated contaminated Air, Dust, Smoke, Toxic Fumes, unpleasant odours, microbial air contaminants, respiratory health hazards establishing outstanding results in more than 120 very critical diversified application areas in many Industries across the country.</p>
             <p> Quality & Customer service are the two basic focus areas of our Organisations. We offer the best quality equipments / systems at most economical price.</p>
@@ -27,8 +88,52 @@
 
         </div>
 
-        
-
-    </nav>
+        <div>
+            <p>web development</p>
+            <ul>
+                <li> MERN full stack </li>
+                <li> MEAN full stack </li>
+            </ul>
+            <P> Other full stack courses</P>
+            <ul>
+                <li> java full stack </li>
+                <li> python full stack </li>
+                <li> .net full stack </li>
+               
+               
+                
+            </ul>
+        </div>
 </body>
+<script>
+    function display_Clock(){
+   
+   setInterval(()=>{
+    var date = new Date();
+   // console.log(date);
+   var day = date.getDay();
+   //console.log(day);
+   var dayList = ["Sunday", "Monday", "Tuesday", "Wednesday","Thursday","Friday","Saturday"];
+   var today = dayList[day];
+   console.log(today);
+    var month = date.getMonth();
+    //console.log(month);
+    var monthList = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+    //console.log(monthList);
+    var monthName = monthList[month];
+    console.log(monthName);
+    var todayDate = date.getDate();
+    console.log(todayDate);
+    var time = date.getHours() + ":" + date.getMinutes() + ":" +date.getSeconds();
+    console.log(time);
+   var current_date = today + " "+  todayDate + "th"+" "+ monthName + " "+  date.getFullYear() + " "+ time ;
+   console.log(current_date);
+    document.getElementById("date").innerHTML = current_date;
+   
+    },1000);
+
+    }
+    display_Clock();
+   
+</script>
 </html>
